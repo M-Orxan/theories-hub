@@ -1,0 +1,109 @@
+The Open/Closed Principle (OCP) is one of the SOLID principles of object-oriented programming. It states that software entities
+(classes, modules, functions, etc.) should be open for extension but closed for modification.
+
+In other words, you should be able to extend the behavior of a module without modifying its source code.
+
+Applying the Open/Closed Principle in C# (or any object-oriented programming language) involves designing your classes 
+so that new functionality can be added as new requirements come along, without changing existing code.
+
+This reduces the risk of introducing new bugs into existing code and promotes reusability and scalability.
+
+Without OCP
+Initially, we have a class that filters numbers to find only even numbers:
+
+public class NumberFilter
+{
+    public List<int> FilterEvenNumbers(List<int> numbers)
+    {
+        var result = new List<int>();
+
+        foreach (var number in numbers)
+        {
+            if (number % 2 == 0)
+            {
+                result.Add(number);
+            }
+        }
+        return result;
+    }
+}
+
+In this design, if we want to filter numbers by other criteria (e.g., odd numbers, numbers greater than a given value), 
+we would have to modify the NumberFilter class by adding more methods. This approach violates the OCP.
+
+With OCP
+To follow the OCP, we can introduce interfaces for specifications (criteria) and a generic filter that uses these specifications:
+
+public interface ICriteria
+{
+    bool IsSatisfied(int number);
+}
+
+public class EvenNumberCriteria : ICriteria
+{
+    public bool IsSatisfied(int number)
+    {
+        return number % 2 == 0;
+    }
+}
+
+public class NumberFilter
+{
+    public List<int> FilterNumbers(List<int> numbers, ICriteria criteria)
+    {
+        List<int> newList = new List<int>();
+        foreach (int number in numbers)
+        {
+            if (criteria.IsSatisfied(number))
+            {
+                newList.Add(number);
+            }
+        }
+        return newList;
+    }
+}
+
+Now, if you want to add a new filtering criterion (e.g., odd numbers), you simply implement a new ICriteria:
+
+public class OddNumberCriteria : ICriteria
+{
+    public bool IsSatisfied(int number)
+    {
+        return number % 2 != 0;
+    }
+}
+
+With this design, NumberFilter remains unchanged when new criteria are added, adhering to the Open/Closed Principle.
+This approach makes the system more flexible and maintainable by allowing it to be extended without modifying existing code.
+
+Main Method: 
+
+static void Main()
+{
+    List<int> list = new List<int> { 59, 94, 85, 38, 24, 57, 44, 14, 9, 60 };
+
+    NumberFilter filter = new NumberFilter();
+    ICriteria evenCriteria = new EvenNumberCriteria();
+
+    List<int> evenNumbers = filter.FilterNumbers(list, evenCriteria);
+    Console.WriteLine("Even Numbers:");
+
+    foreach (int number in evenNumbers)
+    {
+        Console.WriteLine(number);
+    }
+
+    Console.WriteLine();
+
+    ICriteria oddCriteria = new OddNumberCriteria();
+    List<int> oddNumbers = filter.FilterNumbers(list, oddCriteria);
+
+    Console.WriteLine("Odd Numbers:");
+    foreach (int number in oddNumbers)
+    {
+        Console.WriteLine(number);
+    }
+}
+
+
+
