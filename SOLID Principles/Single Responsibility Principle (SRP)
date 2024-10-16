@@ -1,0 +1,73 @@
+The Single Responsibility Principle (SRP) is one of the SOLID principles of object-oriented design, which states that a class should have only one reason
+to change, meaning it should have only one job or responsibility.
+Let's look at a simple C# example to illustrate the Single Responsibility Principle.
+
+Before Applying SRP:
+Imagine we have a class that manages user information and also handles user data storage operations.
+This class violates the SRP because it has more than one reason to change - changes in the way user information is processed and changes in the way
+user data is stored.
+
+
+public class UserManager
+{
+    public void AddUser(string username, string email)
+    {
+        // Logic to add user
+        Console.WriteLine("User added");
+
+        // Code to save user data to a file
+        SaveToFile(username, email);
+    }
+
+    private void SaveToFile(string username, string email)
+    {
+        // Logic to save user data to a file
+        Console.WriteLine("User saved to file");
+    }
+}
+
+
+After Applying SRP
+To adhere to the Single Responsibility Principle, we should refactor the UserManager class so that it only handles user management, and 
+create a separate class for handling data storage.
+User Management :
+
+public class UserManager
+{
+    private readonly UserDataStorage _userDataStorage;
+
+    public UserManager(UserDataStorage userDataStorage)
+    {
+        _userDataStorage = userDataStorage;
+    }
+
+    public void AddUser(string username, string email)
+    {
+        // Logic to add user
+        Console.WriteLine("User added");
+        
+        // Delegate the responsibility of saving user data to UserDataStorage
+        _userDataStorage.SaveToFile(username, email);
+    }
+}
+
+
+Data Storage:
+
+public class UserDataStorage
+{
+    public void SaveToFile(string username, string email)
+    {
+        // Logic to save user data to a file
+        Console.WriteLine("User saved to file");
+    }
+}
+
+
+
+Explanation:
+UserManager Class: Now focused solely on user management. It depends on UserDataStorage for saving user data, adhering to SRP by having only one reason 
+to change (changes in user management logic).
+UserDataStorage Class: Encapsulates the responsibility of data storage, meaning this class will only change for reasons related to data storage.
+This refactoring leads to a design that's easier to maintain and extend, as changes in the storage mechanism do not affect the user management logic, and 
+vice versa.
