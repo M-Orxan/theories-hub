@@ -1,1 +1,1 @@
-# theories-hub
+This repository contains theories and concepts I learnt during my journey in software development. It primarily focuses on topics related to .NET technologies, programming principles, and computer science fundamentals. 
