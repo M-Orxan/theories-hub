@@ -1,0 +1,9 @@
+A queue is a linear data structure that follows the First In, First Out (FIFO) principle. This means that the first element added to the queue will be the first one to be removed.
+You can think of it like a line of people waiting to buy tickets: the person who arrives first is served first.
+
+Key Operations
+	Enqueue: Add an element to the back of the queue.
+	Dequeue: Remove and return the front element of the queue.
+	Peek (or Front): Return the front element without removing it from the queue.
+	Clear: Remove all items from the queue.
+	Count: Return the number of elements in the queue.
