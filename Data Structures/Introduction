@@ -1,0 +1,11 @@
+Data structures are containers that organize and store data in computer memory. They define the organization, 
+management, and manipulation of data, allowing for efficient access, insertion, deletion, and modification operations.
+
+Data structures can be categorized into two main types: linear and nonlinear.
+•	Linear Data Structures: Linear data structures organize data elements in a sequential manner, where each element is connected to its previous and next elements.
+Examples include arrays, linked lists, stacks, and queues.
+
+•	Nonlinear Data Structures: Nonlinear data structures organize data elements in a hierarchical or non-sequential manner, where each element can have multiple connections to other elements. 
+Examples include trees, graphs, and hash tables.
+
+Each data structure has its own advantages and disadvantages, and the choice of data structure depends on the specific requirements of the problem being solved.
