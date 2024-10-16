@@ -1,0 +1,113 @@
+The Liskov Substitution Principle (LSP) is one of the SOLID principles of object-oriented design, which states that objects of a base class
+should be replaceable with objects of its subclasses without affecting the correctness of the program.
+In simpler terms, a subclass should override the methods of its bas class in a way that does not break the functionality of the base class method.
+
+Code violates LSP:
+
+abstract class Cloud
+{
+    public abstract void Translate();
+    public abstract void MachineLearning();
+}
+
+class AWS : Cloud
+{
+    public override void Translate()
+    {
+        Console.WriteLine("AWS Translate");
+    }
+
+    public override void MachineLearning()
+    {
+        Console.WriteLine("AWS MachineLearning");
+    }
+}
+
+class Google : Cloud
+{
+    public override void Translate()
+    {
+        Console.WriteLine("Google Translate");
+    }
+
+    public override void MachineLearning()
+    {
+        Console.WriteLine("Google MachineLearning");
+    }
+}
+
+class Azure : Cloud
+{
+    public override void Translate()
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void MachineLearning()
+    {
+        Console.WriteLine("Azure MachineLearning");
+    }
+}
+
+
+•	AWS and Google Implementations: Both AWS and Google classes provide concrete implementations for Translate and MachineLearning methods.
+  These implementations are in line with LSP, assuming that consumers of these methods are designed to handle the outputs (Console.WriteLine) consistently
+  across different cloud providers.
+
+•	Azure Implementation: The Azure class's implementation of Translate method throws a NotImplementedException, which could be a violation of LSP
+  if the consumer of the Cloud class expects any of its subclasses to provide a working implementation of Translate without failing.
+  Throwing an exception in this context indicates that Azure cannot be used as a direct substitute for Cloud when it comes to translation services, which
+  could lead to runtime errors if not properly handled.
+
+Solutions to Adhere to LSP
+Consider adding interface for Translate and removing Translate method from Cloud abstract class).
+This way, each cloud provider implements only the interfaces or abstract classes relevant to the services they offer. Azure wouldn't need to implement
+ITranslate if it doesn't offer a translation service
+
+
+abstract class Cloud
+{
+    public abstract void MachineLearning();
+}
+
+interface ITranslate
+{
+    void Translate();
+}
+
+class AWS : Cloud, ITranslate
+{
+    public void Translate()
+    {
+        Console.WriteLine("AWS Translate");
+    }
+
+    public override void MachineLearning()
+    {
+        Console.WriteLine("AWS MachineLearning");
+    }
+}
+
+class Google : Cloud, ITranslate
+{
+    public void Translate()
+    {
+        Console.WriteLine("Google Translate");
+    }
+
+    public override void MachineLearning()
+    {
+        Console.WriteLine("Google MachineLearning");
+    }
+}
+
+class Azure : Cloud
+{
+    public override void MachineLearning()
+    {
+        Console.WriteLine("Azure MachineLearning");
+    }
+}
+
+
+
