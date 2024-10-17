@@ -1,0 +1,85 @@
+The Interface Segregation Principle (ISP) is one of the five SOLID principles of object-oriented design and programming, which
+aim to make software designs more understandable, flexible, and maintainable.
+
+The ISP states that no client should be forced to depend on methods it does not use. 
+
+This principle advises splitting large interfaces into smaller and more specific ones so that
+clients only need to know about the methods that are of interest to them.
+
+In other words, instead of one large interface, several smaller interfaces are preferred based on groups of methods, each one serving
+a specific sub-module or client.
+
+Before Applying ISP
+
+public interface IWork
+{
+    void StartWork();
+    void StopWork();
+    void TakeBreak();
+    void Review();
+}
+
+public class Developer: IWork
+{
+    public void StartWork() { /* Code for starting work */ }
+    public void StopWork() { /* Code for stopping work */ }
+    public void TakeBreak() { /* Code for taking a break */ }
+    public void Review() { /* Developers might not need to review, but it's here! */
+   
+}
+
+public class Manager: IWork
+{
+    public void StartWork() { /* Code for starting work */ }
+    public void StopWork() { /* Code for stopping work */ }
+    public void TakeBreak() { /* Code for taking a break */ }
+    public void Review() { /* Code for reviewing work */ }
+}
+
+In this example, both Developer and Manager are forced to implement the Review method, even if it doesn't make sense for all of them, 
+particularly the Developer.
+
+After Applying ISP
+
+public interface IWork
+{
+    void StartWork();
+    void StopWork();
+    void TakeBreak();
+}
+
+public interface IReview
+{
+    void Review();
+}
+
+public class Developer : IWork
+{
+    public void StartWork() { /* Code for starting work */ }
+    public void StopWork() { /* Code for stopping work */ }
+    public void TakeBreak() { /* Code for taking a break */ }
+}
+
+public class Manager : IWork, IReview
+{
+    public void StartWork() { /* Code for starting work */ }
+    public void StopWork() { /* Code for stopping work */ }
+    public void TakeBreak() { /* Code for taking a break */ }
+    public void Review() { /* Specific to managers */ }
+}
+
+
+In this refactored example, the IReview interface is separated from IWork.
+
+Now, classes can choose to implement IReview only if reviewing is part of their responsibilities.
+This design adheres to ISP by ensuring that Developer and Manager classes are not forced to implement methods they do not need, thus achieving
+better separation of concerns and making the system easier to extend and maintain.
+
+Comparison
+•	LSP focuses on ensuring that subclasses can be used in place of their base class without altering the correctness of the program.
+  It's about the behavior of derived classes in relation to their base classes.
+
+•	ISP, on the other hand, is about minimizing the dependencies between clients and services by organizing interfaces around specific features or
+  clients' needs, thus preventing classes from being forced to implement interfaces they do not use.
+
+
