@@ -1,0 +1,16 @@
+In C#, both "continue" and "break" are control flow statements used in loops, such as "for" and "while" loops. They serve different purposes:
+
+break statement:
+
+The break statement is used to terminate the nearest enclosing loop or switch statement.
+When a break statement is encountered, the control immediately exits the loop, and the program continues with the next statement after the loop.
+It is often used when a certain condition is met, and you want to exit the loop prematurely
+
+
+
+
+continue statement:
+
+The continue statement is used to skip the rest of the code inside a loop for the current iteration and move to the next iteration of the loop.
+When a continue statement is encountered, the remaining code inside the loop for the current iteration is skipped, and the loop proceeds with the
+next iteration.
