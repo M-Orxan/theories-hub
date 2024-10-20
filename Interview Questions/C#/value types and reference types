@@ -1,0 +1,10 @@
+Explain value types and reference types
+Value types are primitive datatypes. They are stored directly in stack.
+Value types directly contain their data, and when you assign a value type to another variable or pass it as a method parameter, a copy of the data is created.
+Changes to one do not affect the other one.
+Types like int, float, char, structs, and enums are value types.
+
+Reference types include objects and arrays, such as strings, and any user-defined classes.
+They are allocated on the heap, and their references are stored on the stack.
+When you assign a reference type to another variable or pass it as a method parameter, no copy of data is created, you're working with the same underlying data.
+Because both variables refer the same data in heap
