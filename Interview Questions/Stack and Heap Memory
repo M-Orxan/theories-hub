@@ -1,0 +1,25 @@
+1. Explain Stack and Heap:
+Stack and heap are memories where application variables, object pointers, object references are stored. 
+
+The stack is used for static memory allocation.
+This means memory is allocated when functions or methods are called, and automatically deallocated when they return or complete execution.
+Memory in the stack is managed in a Last In, First Out (LIFO) order.
+Each time a function is called, its local variables, function parameters, and return address are pushed onto the stack, and once the function finishes execution,
+they are popped off.
+Stack size is usually limited by the operating system, which can lead to a stack overflow if too much memory is allocated on the stack.
+Access to stack memory is fast since data is stored in a continuous block of memory.
+Data on the stack is short-lived and only exists as long as the function is executing.
+Primarily used for local variables, function parameters, and control flow (like return addresses).
+
+
+The heap is used for dynamic memory allocation, where memory is allocated and freed manually by the programmer (e.g., using new in C#)
+Memory in the heap is managed more freely and does not follow any strict order like LIFO. 
+The heap is much larger than the stack
+Access to heap memory is slower than stack memory because it requires more complex management
+Data on the heap can persist for as long as you need it. It exists until it is explicitly freed (or garbage collected in languages like C#).
+Typically used for large objects, objects whose size is not known at compile time.
+
+================================================================================================================================================================
+
+2. Where are stack and heap stored?
+Both stack and heap are stored in ram -  Random Access Memory and not on a hard disk.
