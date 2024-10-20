@@ -6,7 +6,7 @@ This means memory is allocated when functions or methods are called, and automat
 Memory in the stack is managed in a Last In, First Out (LIFO) order.
 Each time a function is called, its local variables, function parameters, and return address are pushed onto the stack, and once the function finishes execution,
 they are popped off.
-Stack memory address is contiguous and memory addresses do not have gaps
+Stack memory address is contiguous and memory addresses do not have gaps.
 Stack size is usually limited by the operating system, which can lead to a stack overflow if too much memory is allocated on the stack.
 Access to stack memory is fast since data is stored in a continuous block of memory.
 Data on the stack is short-lived and only exists as long as the function is executing.
@@ -15,7 +15,8 @@ Primarily used for local variables, function parameters, and control flow (like 
 
 The heap is used for dynamic memory allocation, where memory is allocated and freed manually by the programmer (e.g., using new in C#)
 Memory in the heap is managed more freely and does not follow any strict order like LIFO. 
-The heap is much larger than the stack
+The heap is much larger than the stack.
+Unlike the stack, the heap is a region of memory that follows no particular order.
 Access to heap memory is slower than stack memory because it requires more complex management
 Data on the heap can persist for as long as you need it. It exists until it is explicitly freed (or garbage collected in languages like C#).
 Typically used for large objects, objects whose size is not known at compile time.
@@ -43,5 +44,59 @@ Yes, if primitive data types are part of an object then it will go on heap.
 When a value type (like a primitive data type) is "boxed," it is wrapped in an object and stored on the heap.
 As Part of an Array (on the Heap): Arrays in C# are reference types, even if they store value types.
 When you create an array of primitive types, the array is stored on the heap, and the individual elements are stored within the heap-allocated array.
+
+====================================================================================
+
+5.Differentiate on copy by value and copy by ref 
+
+The concepts of copy by value and copy by reference describe how data is passed or copied when variables are assigned or
+when they are passed as parameters to functions
+
+In copy by value, when you pass a variable to a function or assign one variable to another, a copy of the original value is created.
+Any changes made to the copy inside the function or in the new variable do not affect the original value.
+
+In copy by reference, the method or assignment passes a reference (or pointer) to the original variable.
+Any changes made to the variable inside the function or the new variable directly affect the original variable because both are referencing the
+same memory location.
+
+====================================================================================
+
+6. Are string allocated on stack or heap?
+Strings are objects and they have reference on stack and actual data is allocated on heap.
+
+====================================================================================
+
+7. How many stacks and heaps are created for an application?
+
+One Stack per Thread and one Heap for the whole application.
+
+====================================================================================
+
+8. How are stack and heap memory deallocated ?
+
+Stack Allocation: The allocation happens on contiguous blocks of memory.
+Automatically deallocated when the scope is exited and you don’t need to explicitly deallocate memory.
+
+Languages with garbage collection (like C# and Java) handle heap memory automatically.
+The garbage collector is responsible for deallocating heap memory when objects are no longer in use or referenced.
+This process is non-deterministic, meaning you cannot predict precisely when the memory will be freed, but it prevents memory leaks.
+In these languages, developers don't have to manually free memory.
+
+====================================================================================
+
+9. Where is a structure allocated: Stack or Heap?
+In most cases, structures are allocated on the stack.
+However, if a structure is part of a class (which is a reference type) or if it's boxed, it can also be allocated on the heap.
+
+====================================================================================
+
+10. Are structures copied by value (byval) or by reference (byref)?
+Structures are copied by value. When you pass a structure to a method, a copy of the structure is passed, not the reference to the original structure.
+
+====================================================================================
+
+11. Can structures get created on the heap?
+Yes, structures can be created on the heap when they are part of a class or if they are boxed (for example, when cast to an object).
+Otherwise, they are typically created on the stack.
 
 ====================================================================================
