@@ -6,6 +6,7 @@ This means memory is allocated when functions or methods are called, and automat
 Memory in the stack is managed in a Last In, First Out (LIFO) order.
 Each time a function is called, its local variables, function parameters, and return address are pushed onto the stack, and once the function finishes execution,
 they are popped off.
+Stack memory address is contiguous and memory addresses do not have gaps
 Stack size is usually limited by the operating system, which can lead to a stack overflow if too much memory is allocated on the stack.
 Access to stack memory is fast since data is stored in a continuous block of memory.
 Data on the stack is short-lived and only exists as long as the function is executing.
@@ -19,7 +20,28 @@ Access to heap memory is slower than stack memory because it requires more compl
 Data on the heap can persist for as long as you need it. It exists until it is explicitly freed (or garbage collected in languages like C#).
 Typically used for large objects, objects whose size is not known at compile time.
 
-================================================================================================================================================================
+===========================================================================
 
 2. Where are stack and heap stored?
 Both stack and heap are stored in ram -  Random Access Memory and not on a hard disk.
+
+=======================================================================
+
+3. What goes on stack and what goes on heap?
+
+Variables of value types like integers, floats, doubles, booleans and Object references are stored on the stack.
+
+Reference types such as objects (instances of classes) are stored on the heap.
+Only the reference (pointer) to the object is stored on the stack, while the actual data and 
+also primitive data types(in case it's the part of instance ) resides in the heap.
+
+================================================================================
+
+4. Can primitive data types be stored in heap?
+
+Yes, if primitive data types are part of an object then it will go on heap.
+When a value type (like a primitive data type) is "boxed," it is wrapped in an object and stored on the heap.
+As Part of an Array (on the Heap): Arrays in C# are reference types, even if they store value types.
+When you create an array of primitive types, the array is stored on the heap, and the individual elements are stored within the heap-allocated array.
+
+====================================================================================
