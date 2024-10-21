@@ -1,0 +1,6 @@
+What is CLR?
+
+CLR stands for Common Language Runtime. It is a runtime execution environment of .NET. CLR helps to execute your .NET application.
+There are two primary things the CLR does. First it converts IL code to native language to machine language.
+Second it runs the application and when the application runs any kind of unused memory of the application is consumed by garbage collector.
+CLR is also responsible for garbage collector. 
