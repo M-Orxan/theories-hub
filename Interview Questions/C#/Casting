@@ -1,0 +1,26 @@
+1. Explain casting,implicit casting and explicit casting
+
+Type conversion happens when we assign the value of one data type to another.
+If the data types are compatible, then C# does Automatic Type Conversion ot it's called Implicit type casting. 
+If not comparable, then they need to be converted explicitly which is known as Explicit Type conversion. 
+
+Implicit Type Casting / Automatic Type Conversion
+It happens when:
+•	The two data types are compatible.
+•	When we assign value of a smaller data type to a bigger data type.
+
+
+Explicit Type Casting
+It happens when:
+•	The two data types are compatible.
+•	When we assign value of a bigger data type to a smaller data type.
+
+It's done by using the cast operator (type).
+double x = 10.5;
+int y = (int)x;  
+
+============================================================================================================
+
+2. What can happen during explicit casting ?
+
+In explicit casting there is a possibility of data loss. That's why we need to use cast operator. The compiler warns that we can have data loss
