@@ -1,0 +1,30 @@
+What are generic collections ?
+
+Generic collections in C# are collections that allow you to define the type of elements they will store when the collection is created, providing
+type safety and avoiding the need for type casting. They are part of the System.Collections.Generic namespace.
+
+When you define a generic collection, you specify the type of elements it will store, ensuring that only elements of the specified type can
+be added to the collection. This avoids runtime errors and the need for explicit type casting.
+
+Since generic collections are strongly typed, they eliminate the overhead of boxing and unboxing (converting value types to objects and vice versa).
+This improves performance compared to non-generic collections like ArrayList.
+
+Here are some common generic collections provided in the System.Collections.Generic namespace:
+
+List<T>:
+A dynamic array that can grow in size. Elements are stored in a contiguous memory block, and you can access elements using an index.
+
+Dictionary<TKey, TValue>:
+A collection of key-value pairs, where each key is unique. You can retrieve values based on their associated key.
+
+HashSet<T>:
+A collection of unique elements. It doesn't allow duplicates, and its lookup performance is generally faster than a list.
+
+Queue<T>:
+A First-In-First-Out (FIFO) collection, where elements are added at the end and removed from the front.
+
+Stack<T>:
+A Last-In-First-Out (LIFO) collection, where elements are added and removed from the top of the stack.
+
+SortedList<TKey, TValue>:
+A collection of key-value pairs that are automatically sorted by the key.
