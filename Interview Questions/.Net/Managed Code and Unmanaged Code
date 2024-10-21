@@ -1,0 +1,10 @@
+What is Managed Code and Unmanaged Code?
+
+Managed code is code that is executed within a runtime environment. C# and other .NET languages typically produce managed code.
+
+Unmanaged code refers to code that is executed outside the confines of a runtime environment.
+In unmanaged environments, developers have more direct control over memory allocation and deallocation, and there may be fewer runtime checks
+and services provided by the platform.
+Code written in languages like C or C++ is unmanaged. In such languages, developers have to explicitly manage memory, handle type conversions, 
+and deal with other low-level details.
+
