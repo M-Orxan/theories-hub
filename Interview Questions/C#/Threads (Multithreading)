@@ -1,0 +1,19 @@
+1. What are threads (Multithreading)?
+
+In C#, multithreading is a concept that allows multiple threads to be executed simultaneously (e.g., downloading a file while updating the UI), helping 
+to perform tasks in parallel, improving the efficiency and performance of an application.
+
+A thread is the smallest unit of execution within a process. A C# application starts with a main thread, but you can create
+additional threads to execute code in parallel.
+
+=======================================================================================================================================================
+
+2. How are threads different from TPL ?
+
+The first big difference between Thread and Task is that Task does parallel processing, the name itself for task or TPL is Task Parallel Library.
+It actually does parallel processing. We don't have to write extra code for it while threads have a CPU affinity.
+
+In case of task I can return a result, in case of thread I can't. To get result from a thread I need to use delegates, events and so on.
+
+I can capture a task, change task, wait for the other task to finish, I can use async and await.
+
