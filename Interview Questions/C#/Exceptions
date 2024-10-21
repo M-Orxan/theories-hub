@@ -1,0 +1,12 @@
+How do we handle exceptions in C#(try/catch)?
+
+In C#, exceptions are handled using try, catch, finally, and throw blocks. Here's a breakdown of how each of these is used:
+
+try block: This is where you place code that might throw an exception. If an exception occurs, the flow of execution moves to the catch block.
+
+catch block: This block handles the exception. You can have multiple catch blocks for different types of exceptions, or a generic one to handle any exception.
+
+finally block: This is optional and is used to execute code regardless of whether an exception was thrown or not.
+It's often used for clean-up tasks like closing files or releasing resources.
+
+throw keyword: This is used to explicitly throw an exception. You can throw built-in exceptions or custom ones.
