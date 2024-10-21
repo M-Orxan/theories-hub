@@ -1,0 +1,22 @@
+1. What is IL (Intermediate Language) Code and what is the use of JIT (Just in time compiler)?
+
+First thing when C# code runs inside a computer it has to be converted to machine code or converted to a machine language which the machine understands.
+But C# compiler does not directly convert high level code directly into the machine language, it first converts it into a partially compiled code called as
+IL Code which stands for Intermediate Language code. And later when you run the program and execute program at that time we have JIT compiler which
+stands for Just In Time compiler runs over this IL code and compiles it into the machine language.
+So IL code is an intermediate language code or a partially compiled code. JIT compiles this IL code into machine language.
+
+=======================================================================================================================================================
+
+2. Is it possible to view IL code?
+
+Yes, it's possible by by using Disassemblers like ILDSM or ILSpy.
+
+=======================================================================================================================================================
+
+3. What is the benefit of compiling in to IL code?
+
+The runtime environment and development environment can be different so that's why it's compiled into IL Code, then depending on what kind of environment
+JIT generates or compiles an optimal code as per that runtime.
+
+=======================================================================================================================================================
