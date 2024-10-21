@@ -1,0 +1,11 @@
+Explain CLS 
+
+The Common Language Specification (CLS) is a set of basic rules and guidelines in .NET that ensures interoperability between different .NET languages.
+These rules specify what features and behaviors all .NET languages must support in order to work together seamlessly.
+
+CLS ensures that code written in one .NET language can be used by another language without issues.
+Because different languages in the .NET ecosystem have their own unique features and syntax.
+
+CLS is a subset of the Common Type System (CTS).
+While CTS defines all possible types in .NET, CLS defines a more restricted set of types and language features that all languages must support.
+
