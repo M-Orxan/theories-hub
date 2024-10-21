@@ -1,0 +1,8 @@
+What is the importance of CTS?
+
+Common Type System ensures whichever language you coding your data types will get mapped to a Common data type of the .NET framework.
+CTS defines a common set of data types (int, float, string, etc.) that all .NET languages must follow.
+This ensures that a data type like int has the same size and behavior, regardless of the language you are using.
+So that developers can use libraries written in one language in another seamlessly.
+Because each programming language has its own way to declare variables.
+
