@@ -1,0 +1,11 @@
+1. Explain the importance of Garbage collector ?
+
+Garbage collector is a background process which keeps running continuously and claims any kind of unused managed resources.
+
+==================================================================================================================================
+
+2. Can garbage collector claim unmanaged objects ?
+
+No
+
+==================================================================================================================================
