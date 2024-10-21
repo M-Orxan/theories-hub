@@ -1,0 +1,24 @@
+What are the differences between Array and ArrayList?
+
+Here are the key differences between an Array and an ArrayList in C#:
+
+Size:
+
+Array: The size is fixed once it is initialized. You cannot add or remove elements after it is created.
+ArrayList: The size is dynamic. You can add or remove elements at runtime, and it will automatically resize.
+
+
+Type-Safety:
+
+Array: Arrays are type-safe, meaning they store elements of a specified type (e.g., int[], string[]).
+ArrayList: ArrayList is not type-safe.
+It stores object types, meaning you can store different types of elements in the same ArrayList, but it requires casting when retrieving elements.
+
+
+Performance:
+
+Array: Since the size is fixed and it is strongly typed, arrays generally have better performance than ArrayLists.
+ArrayList: ArrayLists have a slight performance overhead because they store elements as object and involve boxing/unboxing when handling
+value types like int, double, etc.
+
+
