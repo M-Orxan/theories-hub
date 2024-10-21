@@ -1,0 +1,16 @@
+NET Framework vs .NET Core vs .NET 5.0
+
+.NET Framework is the original implementation of .NET, first released in 2002 by Microsoft. It only supports Windows.
+.NET Core was introduced in 2016 as a cross-platform, open-source reimplementation of .NET.
+It was designed to address the limitations of the .NET Framework, particularly in terms of cross-platform support.
+.NET 5.0, released in November 2020. It's is a unification platform which unifies all the .NET frameworks into one umbrella giving you a unified and
+a common experience. 
+
+Second point is about performance.
+.NET Core performance is better than .Net Framework because they have divided big big DLLs into small small pieces.
+We are loading only what we need and not the unnecessary things. And the memory footprint becomes less and so that performance increases 
+
+
+Next point as about CLI Tools support
+.NET Framework traditionally does not have a dedicated command-line interface. It's IDE based
+.NET Core supports CLI tools
