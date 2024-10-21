@@ -1,0 +1,10 @@
+Why do we need the out keyword?
+
+The goal of out keyword is to return multiple values from a function.
+Here we pass arguments to methods by reference, allowing the method to return multiple values through its parameters.
+
+When using out, the caller is not required to initialize the variable before passing it to the method.
+The method is responsible for assigning a value to the out parameter.
+
+In the method signature, you must explicitly declare the parameters as out.
+When calling the method, the corresponding arguments must also be preceded by the out keyword.
