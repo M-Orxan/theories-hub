@@ -1,0 +1,6 @@
+Explain Inheritance 
+
+Inheritance is a fundamental concept in Object-Oriented Programming (OOP) that allows a class to inherit properties and behaviors (methods) from another class.
+It establishes a hierarchical relationship between classes. Here the class whose properties and methods are inherited by another class is called base class.
+And the class that inherits the properties and methods of another class is called derived class.
+
