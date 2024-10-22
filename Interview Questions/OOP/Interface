@@ -1,0 +1,20 @@
+1. Explain Interface and Why do we need it?
+
+In C#, an interface is a contract that defines a set of methods, properties, events, or indexers that implementing classes must provide.
+Interfaces are useful for achieving abstraction and multiple inheritance in C#. 
+Multiple inheritance helps to add new methods without affecting the old interfaces.
+After C# 8.0 interfaces allow default interface methods.
+A class can implement multiple interfaces.
+You can't create an instance of interface.
+
+====================================================================================================================================
+
+2. Explain Interface Segregation Principle
+
+
+The Interface Segregation Principle (ISP) states that clients should not be forced to depend on interfaces they do not use.
+In simpler terms, this means that an interface should only include methods that are relevant to the client using it. 
+Instead of having a large, all-encompassing interface, it's better to have smaller, more specific interfaces that different clients can implement according
+to their needs.
+
+====================================================================================================================================
