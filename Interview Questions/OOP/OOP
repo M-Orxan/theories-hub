@@ -1,0 +1,20 @@
+1. Why do we need OOP?
+
+Objective programming helps us to think in terms of real world objects. It offers us the ability to simulate real life itself in software development.
+
+Let’s say we write application for library system. Here we will have books. So we create Book class. And it has name so we create name property.
+What else we have for library. We have authors so we create author class. It has name, surname so we crate properties for name and surname.
+And Author class is allocated to Book class.
+Because each book must have author or authors. We write another property for Book class which is property author to connect these 2 classes. And so on...
+
+====================================================================================================================================================
+
+2.  What are the important pillars in OOP?
+
+Encapsulation: Bundling data and methods, restricting access to certain parts.
+Abstraction: Showing only what is necessary
+Inheritance: Parent-child relationshi. Inheriting properties and methods from a parent class.
+Polymorphism:  Object can act differently under different conditions
+
+====================================================================================================================================================
+
