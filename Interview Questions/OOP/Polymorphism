@@ -1,0 +1,90 @@
+1. What is Polymorphism?
+
+It's an ability of an object to act differently under different conditions.
+
+Example:
+
+Employee e = new Manager(); 
+e = new Supervisor(); 
+
+You can see this employee in line number 7 is acting like a manager and the same employee object in line number 8 is acting like a supervisor so this
+is termed as polymorphism, the ability of an object to act differently.
+
+
+A good real-time example of polymorphism is water.
+We all know that water is a liquid at normal temperature, but it changes to a solid when it is frozen, and the same water
+changes to a gas when it is heated at its boiling point. This is polymorphism.
+
+======================================================================================================================================
+
+2. Can Polymorphism work without Inheritance?
+
+No. In example above both manager and supervisor class is inheriting from the employee class, that's why it can act differently.
+Without inheritance it's not possible.
+
+======================================================================================================================================
+
+3. Explain Static VS Dynamic Polymorphism
+
+Compile-time Polymorphism (Static Polymorphism) is achieved using method overloading.
+In static polymorphism, the behavior of a method is decided at compile time.
+
+Run-time Polymorphism (Dynamic Polymorphism) is achieved through inheritance and method overriding using the virtual and override keywords.
+In dynamic polymorphism, the behavior of a method is decided at runtime
+
+======================================================================================================================================
+
+4. Explain operator overloading
+
+Operator overloading is a concept of polymorphism where redefine the behavior of operators (like +, -, *, etc.) for user-defined
+types (like classes or structs).
+It enables you to provide a custom meaning or functionality when these operators are used with instances of your classes or structs.
+
+In C#, you can overload most operators by defining methods with the operator keyword in your class or struct.
+When the operator is used, the appropriate overloaded operator method is called.
+
+Let’s say we have a Point class that represents a point in a 2D space with x and y coordinates, and
+we want to overload the + operator so that it adds two points together.
+
+public class Point {
+    public int X { get; set; }
+    public int Y { get; set; }
+
+    public Point(int x, int y) {
+        X = x;
+        Y = y;
+    }
+
+    // Overload the + operator
+    public static Point operator +(Point p1, Point p2) {
+        return new Point(p1.X + p2.X, p1.Y + p2.Y);
+    }
+
+    // Overload the - operator
+    public static Point operator -(Point p1, Point p2) {
+        return new Point(p1.X - p2.X, p1.Y - p2.Y);
+    }
+
+    // Override ToString to display points in a readable format
+    public override string ToString() {
+        return $"({X}, {Y})";
+    }
+}
+
+class Program {
+    static void Main() {
+        Point p1 = new Point(3, 4);
+        Point p2 = new Point(2, 7);
+
+        Point sum = p1 + p2;  // Using the overloaded + operator
+        Point difference = p1 - p2;  // Using the overloaded - operator
+
+        Console.WriteLine("Sum: " + sum);        // Outputs: Sum: (5, 11)
+        Console.WriteLine("Difference: " + difference);  // Outputs: Difference: (1, -3)
+    }
+}
+
+Not all operators can be overloaded. For example, the conditional (?:), &&, and || operators cannot be overloaded.
+You must define overloaded operators as public static methods.
+When overloading binary operators like + and -, the operator method should take two parameters, and when overloading
+unary operators like ++ or --, the method should take one parameter.
