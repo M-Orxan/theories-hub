@@ -1,0 +1,8 @@
+What is a Class and Object ?
+
+A class is a blueprint or template for creating objects.
+In OOP languages, to build an object, we first need to model it. To create this object, you will need to define a class. 
+It defines the properties (also called attributes or fields) and behaviors (also known as methods or functions) that the objects created from the class
+will have. It’s a type of object.
+
+Object is an instance of class. 
