@@ -1,0 +1,15 @@
+1. What is method overriding?
+
+Method overriding allows us to define some logic in the parent class which can be overridden in the child class.
+To perform method overriding, we use keywords "virtual" and "override".
+virtual keyword: Applied to a method in the base class to allow it to be overridden in a derived class.
+override keyword: Used in the derived class to override the base class method.
+The base class provides a default implementation, but the derived class can provide a specific implementation that fits the needs of that derived class.
+If any member within a class is a virtual member, the decision about whether it is coming from that class itself or from any derived class is made at runtime.
+
+======================================================================================================================================
+
+2. What is method overloading?
+
+Method overloading in C# is a feature that allows a class to have multiple methods with the same name but different signatures.
+The signature of a method includes the number of parameters, the types of parameters, or their order.
