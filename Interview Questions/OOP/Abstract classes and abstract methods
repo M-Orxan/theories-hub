@@ -1,0 +1,50 @@
+1. What is Abstract Class?
+
+Abstract class is a half-defined or partially defined parent class.
+Abstract classes cannot be instantiated directly, but they can be used as base classes for other classes that derive from them.
+Abstract classes are declared using the abstract keyword.
+They often define a common set of characteristics or behaviors that should be shared among multiple derived classes.
+So, it contains both abstract methods and concrete methods (non-abstract methods) including variables, properties, and indexers. 
+
+=====================================================================================================================================================
+
+2. What are abstract methods?
+
+A method that does not have a body is called an abstract method. It can only be declared in abstract classes.
+It is declared with the modifier abstract. It contains only a declaration/signature.
+Every abstract method declared within an abstract class must be implemented by the Child classes without fail; otherwise, we will get a compile-time error.
+Abstract methods are usually declared where two or more subclasses are expected to fulfill a similar role in a different manner.
+It is compulsory to implement abstract methods.
+
+===========================================================================================================================================
+
+3. Are Abstract methods Virtual?
+
+Yes, abstract methods are implicitly virtual.
+Abstract methods can be overridden in any derived class, similar to how virtual methods work. However, there are some differences:
+
+An abstract method does not have an implementation in the abstract class, whereas a virtual method may have one.
+A derived class must override an abstract method, but it may or may not override a virtual method.
+
+===========================================================================================================================================
+
+4. Why simple base class cannot replace Abstract Classes?
+
+Abstract classes allow you to define methods without any implementation (abstract methods), and force any derived class to provide an
+implementation for these methods. This ensures that all derived classes follow a consistent interface or contract.
+But a simple base class with virtual methods does not enforce this.
+Derived classes can choose whether to override virtual methods or use the base implementation, but they are not required to implement them.
+
+
+Abstract classes allow you to provide partial implementation.
+You can have both abstract methods (which must be overridden) and non-abstract methods (with full implementation) in the same class.
+In a simple base class, you can only provide full method implementations or virtual methods, but you cannot require that derived classes override
+specific methods without providing any implementation.
+
+
+Abstract classes cannot be instantiated directly, ensuring that you never create an object from an incomplete class.
+This is useful when you want to ensure that only fully implemented derived classes can be instantiated.
+A simple base class can be instantiated, even if it's not meant to be used on its own, which can lead to misuse or unexpected behavior.
+
+===========================================================================================================================================
+
