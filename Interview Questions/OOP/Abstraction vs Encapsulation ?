@@ -1,0 +1,10 @@
+Abstraction VS Encapsulation
+
+Abstraction is the process of hiding the complexity of a system by showing only the necessary details.
+It focuses on exposing only essential information and hiding the implementation details.
+It helps to reduce complexity and allows focusing on what an object does instead of how it does it.
+
+
+Encapsulation is the process of bundling the data (variables) and methods (functions) that operate on the data into a single unit (class) and restricting
+access to some of the object's components. It hides the internal state of an object and only exposes a controlled interface.
+It helps to protect the internal state of an object and prevents unintended interference and misuse.
