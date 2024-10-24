@@ -1,0 +1,20 @@
+Difference between Abstract Class and Interface in C#
+
+Interfaces are a contract while abstract classes are half defined parent classes.
+Abstract classes are inherited while interfaces are implemented.
+Abstract classes contain both declaration and implementation parts. Interfaces contain only the declaration of methods, properties, events, or indexers.
+Since C# 8, default implementations can also be included in interfaces.
+Abstract classes don't support multiple inheritance. But multiple inheritance can be achieved by interfaces.
+Abstract classes contain constructor. But interfaces don't contain constructor.
+Abstract classes can contain static members, but interfaces can not.
+Abstract classes can contain different types of access modifiers like public, private, protected etc.
+Interfaces contains only public access modifier because everything in the interface is public.
+Non-abstract methods in an abstract class can have an implementation. 
+
+Use Cases:
+As a general rule, you should use an abstract class when creating a base class that needs to be inherited by other classes in a class hierarchy.
+If you need to define a behavior that can be implemented by multiple unrelated classes, you should use an interface.
+
+If you need to add new members or behavior to a base class, you can add them to an abstract class.
+However, if you need to add behavior to an existing class that cannot inherit from a new base class, you can use an interface.
+Interfaces are often used in scenarios where multiple classes share a common behavior but do not share the same base class.
