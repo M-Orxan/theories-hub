@@ -1,0 +1,19 @@
+ public static int Sum(int number)
+ {
+     int lastDigit;
+     int sum = 0;
+
+     while (number != 0)
+     {
+         lastDigit = number % 10;
+         sum += lastDigit;
+         number /= 10;
+     }
+
+     return sum;
+ }
+
+The Sum method calculates the sum of the digits of a given integer number.
+lastDigit = number % 10 : takes the last digit of number and adds it to sum variable.
+number /= 10 : removes the last digit from number.
+This process goes until the number is equal to 0.
