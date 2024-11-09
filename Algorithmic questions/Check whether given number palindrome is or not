@@ -1,0 +1,23 @@
+    public static int FindReversedNumber(int number)
+    {
+        string reversedNumber = "";
+
+        while (number != 0)
+        {
+            int lastDigit = number % 10;
+            reversedNumber += lastDigit;
+             number /= 10;
+        }
+
+        return int.Parse(reversedNumber);
+    }
+
+    public static bool CheckPalindrome(int number)
+    {
+       int reversedNumber=FindReversedNumber(number);
+        return number == reversedNumber;
+    }
+
+
+FindReversedNumber takes and integer and returns the reversed version of it.
+CheckPalindrome returns true if original number and reversend number equal is
