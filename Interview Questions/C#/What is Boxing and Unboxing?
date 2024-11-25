@@ -1,0 +1,18 @@
+In C#, boxing and unboxing refer to the process of converting a value type to a reference type and vice versa.
+
+Boxing is the process of converting a value type (such as int, double, bool, etc.) into a reference type (specifically, into an object or to any interface type implemented by this value type).
+When you box a value type, the system creates a new object on the heap, and the value of the value type is copied into this new object.
+
+int intValue = 42;
+object boxedValue = intValue; // Boxing occurs here
+
+Unboxing is the reverse process of boxing; it converts a reference type back into a value type.
+This operation requires an explicit cast to be performed, as the program needs to know what type of value is being unboxed.
+It's important to note that unboxing not only casts the object back into the value type but also copies the value from the heap back into the stack.
+
+object boxedValue = 42;
+int intValue = (int)boxedValue; // Unboxing occurs here
+
+Boxing and unboxing operations can impact performance, especially in scenarios where they are performed frequently.
+This is because they involve memory allocations and copying of data.
+It's generally recommended to avoid unnecessary boxing and unboxing operations whenever possible, as they can introduce overhead and degrade performance.
