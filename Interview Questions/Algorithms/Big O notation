@@ -1,0 +1,32 @@
+Big O notation is a powerful tool used in computer science to describe the time complexity or space complexity of algorithms.
+It provides a standardized way to compare the efficiency of different algorithms in terms of their worst-case performance.
+Big O notation only describes the asymptotic behavior of a function, not its exact value.
+
+Big O notation is important for several reasons:
+* Big O Notation is important because it helps analyze the efficiency of algorithms.
+* It provides a way to describe how the runtime or space requirements of an algorithm grow as the input size increases.
+* Allows programmers to compare different algorithms and choose the most efficient one for a specific problem.
+* Helps in understanding the scalability of algorithms and predicting how they will perform as the input size grows.
+* Enables developers to optimize code and improve overall performance.
+
+Here are some common time complexities expressed in Big O notation:
+O(1): Constant time – The algorithm's performance does not change with the size of the input.
+Example: Accessing an element in an array by index.
+
+O(log n): Logarithmic time – The algorithm's performance grows logarithmically as the input size increases.
+Example: Binary search in a sorted array.
+
+O(n): Linear time – The algorithm's performance grows linearly with the size of the input.
+Example: Traversing through an array.
+
+O(n log n): Linearithmic time – The algorithm's performance grows more than linearly but less than quadratically.
+Example: Efficient sorting algorithms like Merge Sort and Quick Sort.
+
+O(n²): Quadratic time – The algorithm's performance grows quadratically with the input size.
+Example: Bubble Sort, Insertion Sort (in the worst case).
+
+O(2ⁿ): Exponential time – The algorithm's performance doubles with each additional input element.
+Example: Solving the Travelling Salesman Problem using brute-force.
+
+O(n!): Factorial time – The algorithm's performance grows factorially with the input size.
+Example: Brute-force solutions to problems like the N-Queens problem or permutations.
