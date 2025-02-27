@@ -1,0 +1,28 @@
+Length of Last Word
+
+https://leetcode.com/submissions/detail/1556606781/
+
+
+  public int LengthOfLastWord(string input)
+  {
+      int lenght = 0;
+
+
+      for (int i = input.Length - 1; i >= 0; i--)
+      {
+
+          if (input[i] != ' ')
+          {
+              lenght++;
+
+          }
+          else if (input[i] == ' ' && lenght != 0)
+          {
+              break;
+          }
+
+      }
+
+      return lenght;
+
+  }
